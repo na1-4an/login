@@ -12,6 +12,7 @@ const home = require("./routes/home");
 app.set("views", "./views");
 //코드를 어떤 엔진으로 해석할 지 설정
 app.set("view engine", "ejs");
+app.use(express.static('${__dirname}/public'));
 
 //use: 미들웨어를 등록해주는 메서드
 app.use("/", home);
