@@ -12,6 +12,14 @@ function login(){
         id: id.value,
         password: password.value,
     };
-    console.log(req);
-    
+
+    //서버에서 데이터 받기!!
+    fetch("/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        //키값과 value값 모두 문자열로 인식하게 JSON으로 묶는거임.
+        body: JSON.stringify(req),
+    })
 }
